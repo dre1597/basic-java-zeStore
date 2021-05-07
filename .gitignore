@@ -1,0 +1,12 @@
+##Config files
+.vscode
+
+##Test (with main class)files
+Test*.java
+
+## .class files
+*.class
+
+## my other fodders
+
+part1

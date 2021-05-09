@@ -22,7 +22,7 @@ public class Costumer {
     }
 
     public String toSring() {
-        return "\nCostumer name: " + this.name;
+        return "\nCostumer name: " + this.name +
+                "\nCostumer id: " + this.id;
     }
-    
 }

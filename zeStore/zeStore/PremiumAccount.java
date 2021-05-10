@@ -5,24 +5,22 @@ public class PremiumAccount extends Account{
         super(name, branchCod, bonus);
     }
     @Override
-    public boolean useBonus(double bonus) {
-        double actualBonus = super.getBonus();
-        if(actualBonus >= bonus) {
-            actualBonus-= (bonus + 25);
-            super.setBonus(actualBonus);
-            return true;
-        }
-        System.out.println("You dont have enough bonus!");
-        return false;
-    }
-    @Override
     public void addBonus(double bonus) {
         double actualBonus = super.getBonus();
 
-        if(bonus > 0) {
-            actualBonus += (bonus + 25);
-            super.setBonus(actualBonus);
+        if(bonus < 0) {
+            throw new NegativeBonusException("Can't add a negative or a null bonus");
         }
-        else System.out.println("Please enter a positive bonus!");
+        actualBonus += (bonus + 25);
+        super.setBonus(actualBonus);
+    }
+    @Override
+    public void useBonus(double bonus) {
+        double actualBonus = super.getBonus();
+        if(actualBonus < bonus) {
+            throw new InsufficientBonusException("You have only " + super.getBonus() + " in bonus , can't use " + bonus);
+        }
+        actualBonus-= (bonus + 25);
+        super.setBonus(actualBonus);
     }
 }

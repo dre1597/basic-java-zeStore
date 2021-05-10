@@ -62,26 +62,22 @@ public class Account {
     }
     
     public void addBonus(double bonus) {
-        if(bonus > 0) this.bonus += bonus;
-        else System.out.println("Please enter a positive bonus!");
+        if(bonus < 0) {
+            throw new NegativeBonusException("Can't add a negative or a null bonus");
+        }
+        this.bonus += bonus;
     }
 
-    public boolean useBonus(double bonus) {
-        if(this.bonus >= bonus) {
-            this.bonus -= bonus;
-            return true;
+    public void useBonus(double bonus) {
+        if(this.bonus < bonus) {
+            throw new InsufficientBonusException("You have only " + this.bonus + " in bonus , can't use " + bonus);
         }
-        System.out.println("You dont have enough bonus!");
-        return false;
+        this.bonus -= bonus;
     }
 
-    public boolean giveBonus(double bonus, Account destiny) {
-        if(this.useBonus(bonus)) {
-            destiny.addBonus(bonus);
-            return true;
-        }
-        System.out.println("You dont have enough bonus!");
-        return false;
+    public void giveBonus(double bonus, Account destiny) {
+        this.useBonus(bonus);
+        destiny.addBonus(bonus);
     }
 
     public String toString() {

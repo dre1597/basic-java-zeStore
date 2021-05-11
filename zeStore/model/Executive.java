@@ -15,6 +15,7 @@ public class Executive extends Employee implements Authentication {
     public double getBonusSalary() {
         return super.getBonusSalary() + super.getSalary() * 0.5;
     }
+    @Override
     public String toString() {
         return "\nI'm a Executive" + super.toString();
     }

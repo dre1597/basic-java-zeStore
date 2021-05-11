@@ -4,7 +4,7 @@ import exception.InsufficientBonusException;
 import exception.NegativeBonusException;
 
 
-public class Account { 
+public class Account {
     private Costumer owner;
     private int branchCod = 4242;
     private double bonus = 100;
@@ -83,9 +83,9 @@ public class Account {
         this.useBonus(bonus);
         destiny.addBonus(bonus);
     }
-
+    @Override
     public String toString() {
-        return this.owner.toSring()  +
+        return this.owner.toString()  +
                 "\nBranch code: " + this.branchCod + 
                 "\nCostumer bonus: " + this.bonus;
     }

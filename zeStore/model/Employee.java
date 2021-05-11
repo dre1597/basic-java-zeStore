@@ -34,6 +34,7 @@ public abstract class Employee {
     public double getTotalSalary() {
         return this.getBonusSalary() + this.salary;
     }
+    @Override
     public String toString() {
         return "\nEmployee name: " + this.name +
                 "\nEmployee id: " + this.id + 

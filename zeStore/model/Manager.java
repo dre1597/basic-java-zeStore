@@ -16,6 +16,7 @@ public class Manager extends Employee implements Authentication{
     public double getBonusSalary() {
         return super.getBonusSalary() + super.getSalary() * 0.3;
     }
+    @Override
     public String toString() {
         return "\nI'm a Manager" + super.toString();
     }

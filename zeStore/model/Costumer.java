@@ -20,8 +20,8 @@ public class Costumer {
     public int getId() {
         return this.id;
     }
-
-    public String toSring() {
+    @Override
+    public String toString() {
         return "\nCostumer name: " + this.name +
                 "\nCostumer id: " + this.id;
     }

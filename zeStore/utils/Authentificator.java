@@ -1,4 +1,4 @@
-package zeStore;
+package utils;
 
 public class Authentificator {
     

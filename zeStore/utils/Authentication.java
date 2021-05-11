@@ -1,4 +1,4 @@
-package zeStore;
+package utils;
 
 public interface Authentication {
     public abstract void setPassword(int password);

@@ -1,4 +1,8 @@
-package zeStore;
+package model;
+
+import exception.InsufficientBonusException;
+import exception.NegativeBonusException;
+
 
 public class Account { 
     private Costumer owner;

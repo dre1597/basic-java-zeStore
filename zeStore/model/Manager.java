@@ -1,4 +1,8 @@
-package zeStore;
+package model;
+
+import utils.Authentication;
+import utils.Authentificator;
+
 
 public class Manager extends Employee implements Authentication{
 

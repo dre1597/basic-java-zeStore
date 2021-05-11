@@ -1,4 +1,4 @@
-package zeStore;
+package model;
 
 public abstract class Employee {
     private String name;

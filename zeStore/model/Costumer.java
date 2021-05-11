@@ -1,4 +1,4 @@
-package zeStore;
+package model;
 
 public class Costumer {
     private String name;

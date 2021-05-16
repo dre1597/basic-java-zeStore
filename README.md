@@ -1,4 +1,7 @@
 # Basic Java Project to improve on OOP concepts
+## About
+
+This is a project that I am doing while following the basic Java coursers on [Alura](https://cursos.alura.com.br/formacao-java).
 
 ## Technologies
 - Java SE 15

@@ -1,30 +1,32 @@
 package model;
 
 import utils.Authentication;
-import utils.Authentificator;
+import utils.Authenticator;
 
 public class Executive extends Employee implements Authentication {
 
-    private Authentificator fiscalize;
+  private Authenticator inspect;
 
-    public Executive(String name, double salary, int password) { 
-        super(name, salary);
-        this.fiscalize.setPassword(password);
-    }
+  public Executive(String name, double salary, int password) {
+    super(name, salary);
+    this.inspect.setPassword(password);
+  }
 
-    public double getBonusSalary() {
-        return super.getBonusSalary() + super.getSalary() * 0.5;
-    }
-    @Override
-    public String toString() {
-        return "\nI'm a Executive" + super.toString();
-    }
+  @Override
+  public double getBonusSalary() {
+    return super.getBonusSalary() + super.getSalary() * 0.5;
+  }
 
-    public void setPassword(int password) {
-        this.fiscalize.setPassword(password);
-    }
+  @Override
+  public String toString() {
+    return "\nI'm a Executive" + super.toString();
+  }
 
-    public boolean enterSystem(int password) {
-        return this.fiscalize.authenticate(password);
-    }
+  public void setPassword(int password) {
+    this.inspect.setPassword(password);
+  }
+
+  public boolean enterSystem(int password) {
+    return this.inspect.authenticate(password);
+  }
 }

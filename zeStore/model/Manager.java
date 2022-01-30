@@ -1,31 +1,32 @@
 package model;
 
 import utils.Authentication;
-import utils.Authentificator;
+import utils.Authenticator;
 
+public class Manager extends Employee implements Authentication {
 
-public class Manager extends Employee implements Authentication{
+  private Authenticator inspect;
 
-    private Authentificator fiscalize;
+  public Manager(String name, double salary, int password) {
+    super(name, salary);
+    this.inspect.setPassword(password);
+  }
 
-    public Manager(String name, double salary, int password) {
-        super(name, salary);
-        this.fiscalize.setPassword(password);
-    }
-    
-    public double getBonusSalary() {
-        return super.getBonusSalary() + super.getSalary() * 0.3;
-    }
-    @Override
-    public String toString() {
-        return "\nI'm a Manager" + super.toString();
-    }
+  @Override
+  public double getBonusSalary() {
+    return super.getBonusSalary() + super.getSalary() * 0.3;
+  }
 
-    public void setPassword(int password) {
-        this.fiscalize.setPassword(password);
-    }
+  @Override
+  public String toString() {
+    return "\nI'm a Manager" + super.toString();
+  }
 
-    public boolean enterSystem(int password) {
-        return this.fiscalize.authenticate(password);
-    }
+  public void setPassword(int password) {
+    this.inspect.setPassword(password);
+  }
+
+  public boolean enterSystem(int password) {
+    return this.inspect.authenticate(password);
+  }
 }
